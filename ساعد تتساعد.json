@@ -1,0 +1,23 @@
+{
+  "id": 4960074,
+  "name": "ساعد تتساعد",
+  "target": "tag",
+  "source_type": "Repository",
+  "source": "youssefahmedabotalebb1/help_to_help",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": []
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    }
+  ],
+  "bypass_actors": []
+}
