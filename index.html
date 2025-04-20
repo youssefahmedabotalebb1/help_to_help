@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>ساعد تتساعد | متجر المنظفات والمعطرات</title>
+  <meta name="description" content="متجر ساعد تتساعد يقدم لك أفضل أنواع المنظفات والمعطرات ومنتجات العناية بأسعار مناسبة وجودة عالية.">
+  <meta name="keywords" content="منظفات, معطرات, منتجات تنظيف, عناية بالبشرة, متجر إلكتروني, ساعد تتساعد, help to help">  <!-- سوشيال ميديا -->  <meta property="og:title" content="ساعد تتساعد | متجر للمنظفات والمعطرات">
+  <meta property="og:description" content="تسوق من أفضل تشكيلة منظفات، معطرات ومنتجات عناية. توصيل سريع وجودة مضمونة.">
+  <meta property="og:url" content="https://youssefahmedabotalebb1.github.io/help_to_help/">
+  <meta property="og:type" content="website">  <link rel="stylesheet" href="style.css">
+</head>
+<body>  <header>
+    <img id="logo" src="logo.png" alt="ساعد تتساعد">
+    <span>ساعد تتساعد - HELP TO HELP </span>
+  </header>  <nav>
+    <input type="text" id="searchInput" placeholder="ابحث عن منتج..." oninput="searchProducts()">
+    <button onclick="filterProducts('all')">الكل</button>
+    <button onclick="filterProducts('moater')">معطر</button>
+    <button onclick="filterProducts('molame')">ملمع</button>
+    <button onclick="filterProducts('monazef')">منظفات</button>
+    <button onclick="filterProducts('enaya')">عناية بالبشرة</button>
+    <button onclick="filterProducts('Other')">أخرى</button><!-- Cart button with badge -->
+<div class="cart-container">
+  <button id="cartBtn" onclick="showCart()">
+    <img src="cart-icon.png" alt="سلة المشتريات">
+    <span id="cartBadge" class="cart-badge hidden">0</span>
+  </button>
+</div>
+
+  </nav>  <div class="grid" id="productsGrid"></div>  <!-- Product popup -->  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <div class="popup-header">
+        <img id="popupImg" src="" alt="">
+      </div>
+      <div class="popup-body">
+        <h2 id="popupTitle"></h2>
+        <p id="popupDesc"></p>
+        <div class="price-tag">
+          <span id="popupPrice"></span> جنيه
+        </div>
+        <div class="order-details">
+          <div class="input-group">
+            <label>الكمية:</label>
+            <input type="number" id="quantity" placeholder="الكمية" min="1" value="1" oninput="updateTotal()">
+          </div>
+          <div class="input-group">
+            <label>العنوان:</label>
+            <input type="text" id="userAddress" placeholder="أدخل عنوانك..." oninput="updateTotal()">
+          </div>
+          <div class="total-price">
+            <span>الإجمالي:</span>
+            <span id="totalPrice">0</span> جنيه
+          </div>
+        </div>
+        <div class="popup-buttons">
+          <button id="addToCartBtn" class="add-cart-btn">
+            <img src="cart-icon.png" width="20"> إضافة إلى السلة
+          </button>
+          <button id="whatsappBtn" class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20"> طلب عبر واتساب
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>  <!-- Shopping Cart popup -->  <div id="cartPopup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeCart()">&times;</span>
+      <div class="popup-body">
+        <h2>سلة المشتريات</h2>
+        <div id="cartItems" class="cart-items">
+          <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+          <div class="cart-total">
+            <span>الإجمالي:</span>
+            <span id="cartTotal">0</span> جنيه
+          </div>
+          <div class="input-group">
+            <label>العنوان للتوصيل:</label>
+            <input type="text" id="cartAddress" placeholder="أدخل عنوانك للتوصيل...">
+          </div>
+          <button id="checkoutBtn" class="checkout-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20"> إتمام الطلب
+          </button>
+          <button id="clearCartBtn" class="clear-cart-btn">
+            إفراغ السلة
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>  <script src="main.js"></script></body>
+</html>
